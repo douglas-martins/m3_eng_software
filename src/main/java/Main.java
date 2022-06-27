@@ -1,4 +1,11 @@
 import models.*;
+import models.match.MatchSimulator;
+import models.match.MatchTeam;
+import models.match.MatchesStatistics;
+import models.player.Defender;
+import models.player.Goalkeeper;
+import models.player.Player;
+import models.player.Striker;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -9,10 +16,10 @@ public class Main {
     public static void main(String[] args) {
        Main main = new Main();
 
-       main.testMatchSimulator();
+       main.runMatchSimulator();
     }
 
-    private void testMatchSimulator() {
+    private void runMatchSimulator() {
         List<Player> blackTeamPlayers = this.createBlackTeamPlayers();
         Team blackTeam = this.createBlackTeam(blackTeamPlayers);
         List<Player> greenTeamPlayers = this.createGreenTeamPlayers();
@@ -21,13 +28,13 @@ public class Main {
         teams.add(blackTeam);
         teams.add(greenTeam);
 
-        MatchesStatics matchesStatics = new MatchesStatics(teams);
+        MatchesStatistics matchesStatistics = new MatchesStatistics(teams);
         MatchSimulator matchSimulator = new MatchSimulator(
                 new MatchTeam(blackTeam),
                 new MatchTeam(greenTeam),
                 LocalDateTime.now());
 
-        matchSimulator.run(matchesStatics);
+        matchSimulator.run(matchesStatistics);
         System.out.println("a");
     }
 

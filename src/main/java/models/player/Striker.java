@@ -1,4 +1,4 @@
-package models;
+package models.player;
 
 public class Striker implements Position{
 

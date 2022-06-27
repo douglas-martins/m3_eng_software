@@ -1,19 +1,22 @@
-package models;
+package models.match;
 
 import lombok.Getter;
+import models.player.Player;
+import models.PointsType;
+import models.Team;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 @Getter
-public class MatchesStatics {
+public class MatchesStatistics {
 
     private List<Match> matches;
     private List<Team> standing;
     private List<Player> topScores;
 
-    public MatchesStatics(List<Team> teams) {
+    public MatchesStatistics(List<Team> teams) {
         this.standing = teams;
         this.topScores = new ArrayList<>();
         this.matches = new ArrayList<>();

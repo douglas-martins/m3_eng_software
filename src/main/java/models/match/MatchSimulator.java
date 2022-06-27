@@ -1,9 +1,11 @@
-import lombok.Data;
+package models.match;
+
 import models.*;
+import models.player.Goalkeeper;
+import models.player.Player;
 
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class MatchSimulator {
 
@@ -18,7 +20,7 @@ public class MatchSimulator {
         this.chooseHomeAndAwayTeam();
     }
 
-    public void run(MatchesStatics matchesStatics) {
+    public void run(MatchesStatistics matchesStatistics) {
         boolean isHomeTeamAttacking = true;
         MatchTeam homeMatchTeam = this.match.getMatchTeam(true);
         MatchTeam awayMatchTeam = this.match.getMatchTeam(false);
@@ -34,7 +36,7 @@ public class MatchSimulator {
         }
 
         this.match.setWinningTeam();
-        matchesStatics.addMatch(this.match);
+        matchesStatistics.addMatch(this.match);
 
         homeMatchTeam.getTeam().addMatches(this.match);
         awayMatchTeam.getTeam().addMatches(this.match);

@@ -1,4 +1,4 @@
-package models;
+package models.player;
 
 import lombok.Getter;
 
