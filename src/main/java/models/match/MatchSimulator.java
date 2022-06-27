@@ -9,7 +9,7 @@ import java.util.*;
 
 public class MatchSimulator {
 
-    private final int ROUNDS = 15;
+    private final int ROUNDS = 16;
     private final double HOME_TEAM_PLUS = 1.25;
 
     private Match match;
