@@ -20,6 +20,17 @@ public class MatchSimulator {
         this.chooseHomeAndAwayTeam();
     }
 
+    /**
+     * 1. Cada time tera a oportunidade de atacar o outro time 8 vezes por jogo
+     * 2. O time da casa tera seus status (individual e coletivo) acreditos de * 1.25
+     * 3. Soma o valor de status dos 2 times, tendo assim um numero máximo para porcentagem
+     * 4. Cálcula a chance, em %, do ataque ser bem sucedido, baseado na soma anterior
+     * 5. Caso o ataque seja bem sucedido, é verificado a probibilidade do goleiro fazer a defesa (status do jogador
+     *  atante + status do goleiro)
+     *
+     * @param matchesStatistics object with the data from matches
+     * @param teamsStatistics object with the data from teams
+     */
     public void run(MatchesStatistics matchesStatistics, List<TeamStatistics> teamsStatistics) {
         boolean isHomeTeamAttacking = true;
         MatchTeam homeMatchTeam = this.match.getMatchTeam(true);
