@@ -2,10 +2,7 @@ import models.*;
 import models.match.MatchSimulator;
 import models.match.MatchTeam;
 import models.match.MatchesStatistics;
-import models.player.Defender;
-import models.player.Goalkeeper;
 import models.player.Player;
-import models.player.Striker;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

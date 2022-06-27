@@ -3,9 +3,6 @@ package models.match;
 import lombok.Data;
 import models.Team;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 public class MatchTeam {
 

@@ -17,7 +17,7 @@ public class Goalkeeper implements Position{
 
     @Override
     public Integer calculateAbility() {
-        return ((height * 4) + (this.reflexes * 6) / 10);
+        return ((height * 4) + (this.reflexes * 6));
     }
 
     private Integer calculateHeightNormalizedValue(Integer height) {

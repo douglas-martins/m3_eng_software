@@ -12,6 +12,6 @@ public class Striker implements Position{
 
     @Override
     public Integer calculateAbility() {
-        return ((this.velocity * 4) + (this.technique * 6)) / 10;
+        return ((this.velocity * 4) + (this.technique * 6)) /10;
     }
 }

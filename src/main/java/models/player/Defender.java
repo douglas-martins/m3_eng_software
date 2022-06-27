@@ -12,6 +12,6 @@ public class Defender implements Position{
 
     @Override
     public Integer calculateAbility() {
-        return ((this.cover * 6) + (this.disarm * 4)) / 10;
+        return ((this.cover * 6) + (this.disarm * 4));
     }
 }
