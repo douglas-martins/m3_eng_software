@@ -41,7 +41,6 @@ public class MatchesStatistics {
         }
 
         this.standing.sort(Collections.reverseOrder());
-        System.out.println("a");
     }
 
     private void refreshTopScores(Match match) {
@@ -55,7 +54,6 @@ public class MatchesStatistics {
         }
 
         this.topScores.sort(Collections.reverseOrder());
-        System.out.println("a");
     }
 
     private void updatePlayerScored(Player player) {
