@@ -1,7 +1,6 @@
 package models.match;
 
 import models.*;
-import models.player.Goalkeeper;
 import models.player.Player;
 
 import java.time.LocalDateTime;
