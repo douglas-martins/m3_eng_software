@@ -32,11 +32,11 @@ public class Main {
     }
 
     private List<Player> createBlackTeamPlayers() {
-        Player goalkeeper = new Goalkeeper("Jorge", 30, 1.95, 90);
-        Player defenderOne = new Defender("Alemão", 27, 75, 80);
-        Player defenderTwo = new Defender("João", 22, 85, 75);
-        Player strikerOne = new Striker("Euzebio", 33, 70, 85);
-        Player strikerTwo = new Striker("Romero", 21, 95, 85);
+        Player goalkeeper = Player.CreateAsGoalkeeper("Jorge", 30, 195, 90);
+        Player defenderOne = Player.CreateAsDefender("Alemão", 27, 75, 80);
+        Player defenderTwo = Player.CreateAsDefender("João", 22, 85, 75);
+        Player strikerOne = Player.CreateAsStriker("Euzebio", 33, 70, 85);
+        Player strikerTwo = Player.CreateAsStriker("Romero", 21, 95, 85);
 
         return List.of(goalkeeper, defenderOne, defenderTwo, strikerOne, strikerTwo);
     }
@@ -53,11 +53,11 @@ public class Main {
     }
 
     private List<Player> createGreenTeamPlayers() {
-        Player goalkeeper = new Goalkeeper("Arnaldo", 33, 1.89, 80);
-        Player defenderOne = new Defender("Igor", 29, 65, 70);
-        Player defenderTwo = new Defender("Gerson", 20, 70, 65);
-        Player strikerOne = new Striker("Renato", 35, 60, 80);
-        Player strikerTwo = new Striker("Eduardo", 20, 75, 75);
+        Player goalkeeper = Player.CreateAsGoalkeeper("Arnaldo", 33, 189, 80);
+        Player defenderOne = Player.CreateAsDefender("Igor", 29, 65, 70);
+        Player defenderTwo = Player.CreateAsDefender("Gerson", 20, 70, 65);
+        Player strikerOne = Player.CreateAsStriker("Renato", 35, 60, 80);
+        Player strikerTwo = Player.CreateAsStriker("Eduardo", 20, 75, 75);
 
         return List.of(goalkeeper, defenderOne, defenderTwo, strikerOne, strikerTwo);
     }

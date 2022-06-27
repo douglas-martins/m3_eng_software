@@ -1,20 +1,17 @@
 package models;
 
-public class Defender extends Player {
+public class Defender implements Position{
 
     private Integer cover;
     private Integer disarm;
 
-    public Defender(String name, Integer age, Integer cover, Integer disarm) {
-        super(name, age);
-        this.cover = cover;
-        this.disarm = disarm;
-
-        this.setAbility();
+    public Defender(Integer cover, Integer disarm) {
+        this.cover = validateAttributeInRange(cover);
+        this.disarm = validateAttributeInRange(disarm);
     }
 
     @Override
     public Integer calculateAbility() {
-        return (this.cover * 6) + (this.disarm * 4);
+        return ((this.cover * 6) + (this.disarm * 4)) / 10;
     }
 }

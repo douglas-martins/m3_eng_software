@@ -40,26 +40,22 @@ public class Team implements Comparable<Team> {
         return this.players.stream().map(Player::getAbility).reduce(0, Integer::sum);
     }
 
-    public List<Defender> getDefenders() {
-        return this.players.stream()
-                .filter(player -> player instanceof Defender)
-                .map(player -> (Defender) player)
-                .collect(Collectors.toList());
+    public List<Player> getDefenders() {
+        return getPlayerByPosition(Defender.class);
     }
 
-    public List<Striker> getStrikers() {
-        return this.players.stream()
-                .filter(player -> player instanceof Striker)
-                .map(player -> (Striker) player)
-                .collect(Collectors.toList());
+    public List<Player> getStrikers() {
+        return getPlayerByPosition(Striker.class);
     }
 
-    public Goalkeeper getGoalkeeper() {
+    public Player getGoalkeeper() {
+        return getPlayerByPosition(Goalkeeper.class).stream().findFirst().orElseThrow(TeamNoGoalkeeperException::new);
+    }
+
+    private List<Player> getPlayerByPosition(Class<?> position){
         return this.players.stream()
-                .filter(player -> player instanceof Goalkeeper)
-                .map(player -> (Goalkeeper) player)
-                .findFirst()
-                .orElseThrow(TeamNoGoalkeeperException::new);
+                .filter(player -> player.getPosition().getClass().equals(position))
+                .collect(Collectors.toList());
     }
 
     public Player getPlayer(Integer shirtNumber) {

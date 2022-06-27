@@ -66,7 +66,7 @@ public class MatchSimulator {
 
 
         if (result <= attackingOdds) {
-            Goalkeeper goalkeeper = defenderTeam.getGoalkeeper();
+            Player goalkeeper = defenderTeam.getGoalkeeper();
             Player shooterPlayer = this.simulateGoalScored(attackingTeam);
 
             if (this.simulateGoalkeeperSave(goalkeeper, shooterPlayer, isHomeTeamAttacking)) {
@@ -78,7 +78,7 @@ public class MatchSimulator {
         }
     }
 
-    private Boolean simulateGoalkeeperSave(Goalkeeper goalkeeper, Player shooter, boolean isHomeTeamShooting) {
+    private Boolean simulateGoalkeeperSave(Player goalkeeper, Player shooter, boolean isHomeTeamShooting) {
         double goalkeeperPower = goalkeeper.getAbility().doubleValue();
         double shooterPower = shooter.getAbility().doubleValue();
 
