@@ -10,7 +10,6 @@ public class Main {
        Main main = new Main();
 
        main.testMatchSimulator();
-        System.out.println("a");
     }
 
     private void testMatchSimulator() {
@@ -29,6 +28,7 @@ public class Main {
                 LocalDateTime.now());
 
         matchSimulator.run(matchesStatics);
+        System.out.println("a");
     }
 
     private List<Player> createBlackTeamPlayers() {

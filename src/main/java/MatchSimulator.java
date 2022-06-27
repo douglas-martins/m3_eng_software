@@ -34,9 +34,13 @@ public class MatchSimulator {
         }
 
         this.match.setWinningTeam();
+        matchesStatics.addMatch(this.match);
+
+        homeMatchTeam.getTeam().addMatches(this.match);
+        awayMatchTeam.getTeam().addMatches(this.match);
         homeMatchTeam.getTeam().resetPlayersCurrentGoals();
         awayMatchTeam.getTeam().resetPlayersCurrentGoals();
-        matchesStatics.addMatch(this.match);
+        System.out.println("a");
     }
 
     private void chooseHomeAndAwayTeam() {

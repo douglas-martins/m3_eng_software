@@ -1,11 +1,9 @@
 package models;
 
-import lombok.Data;
 import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 @Getter
@@ -29,19 +27,6 @@ public class MatchesStatics {
     }
 
     private void refreshStanding(Match match) {
-        this.addTeamPoints(match);
-
-        Collections.sort(this.standing);
-        Collections.sort(this.topScores);
-    }
-
-    private void refreshTopScores(Match match) {
-        for (MatchTeam matchTeam : match.getTeams()) {
-            matchTeam.getTeam().getPlayers().stream().filter(player -> player.getCurrentMatchGoals() > 0).forEach(player -> addt);
-        }
-    }
-
-    private void addTeamPoints(Match match) {
         Team homeTeam = match.getTeam(true);
         Team awayTeam = match.getTeam(false);
 
@@ -51,8 +36,26 @@ public class MatchesStatics {
         } else {
             match.getWinningTeam().getTeam().addPoints(PointsType.WIN);
         }
+
+        this.standing.sort(Collections.reverseOrder());
+        System.out.println("a");
     }
 
-    private void updatePlayerScored() {
+    private void refreshTopScores(Match match) {
+        if (this.topScores.isEmpty()) {
+            for (MatchTeam matchTeam : match.getTeams()) {
+                matchTeam.getTeam().getPlayers()
+                        .stream()
+                        .filter(player -> player.getCurrentMatchGoals() > 0)
+                        .forEach(this::updatePlayerScored);
+            }
+        }
+
+        this.topScores.sort(Collections.reverseOrder());
+        System.out.println("a");
+    }
+
+    private void updatePlayerScored(Player player) {
+        this.topScores.add(player);
     }
 }

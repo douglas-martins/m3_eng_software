@@ -31,6 +31,10 @@ public class Team implements Comparable<Team> {
         this.points += pointsType.getValue();
     }
 
+    public void addMatches(Match match) {
+        this.matches.add(match);
+    }
+
     public Integer getTeamPower() {
         return this.players.stream().map(Player::getAbility).reduce(0, Integer::sum);
     }
