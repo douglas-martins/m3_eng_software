@@ -1,5 +1,6 @@
 package models;
 
+import lombok.Data;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-@Getter
+@Data
 public class Team implements Comparable<Team> {
 
     private String name;
@@ -73,15 +74,9 @@ public class Team implements Comparable<Team> {
     }
 
     private Integer getPlayerShirtNumber(Integer shirtNumber) {
-        Player hasPlayer = this.players.stream()
-                .filter(player -> player.getShirtNumber().equals(shirtNumber))
-                .findFirst().orElse(null);
+        Player hasPlayer = getPlayer(shirtNumber);
 
-        if (hasPlayer != null) {
-            return shirtNumber;
-        } else {
-            return this.getFirstShirtNumberAvailable();
-        }
+        return hasPlayer != null ? shirtNumber : this.getFirstShirtNumberAvailable();
     }
 
     private Integer getFirstShirtNumberAvailable() {
@@ -92,12 +87,11 @@ public class Team implements Comparable<Team> {
     private Integer getRandomShirtNumberAvailable(List<Integer> numbers) {
         Random rand = new Random();
         int range = 1;
+        int random;
 
-        int random = rand.nextInt(range) + 1;
-
-        while (numbers.contains(random)) {
+        do{
             random = rand.nextInt(range) + 1;
-        }
+        }while (numbers.contains(random));
 
         return random;
     }

@@ -21,26 +21,16 @@ public class Match {
     }
 
     public Team getTeam(Boolean isHome) {
-        MatchTeam result = Arrays.stream(this.teams)
+        return getMatchTeam(isHome).getTeam();
+    }
+
+
+    public MatchTeam getMatchTeam(Boolean isHome){
+        return Arrays.stream(this.teams)
                 .filter(matchTeam -> matchTeam.getIsHome() == isHome)
                 .findFirst()
                 .orElseThrow(MatchNoHomeTeamException::new);
-
-        return result.getTeam();
     }
-
-    public MatchTeam getMatchTeam(Boolean isHome) {
-        MatchTeam result = Arrays.stream(this.teams)
-                .filter(matchTeam -> matchTeam.getIsHome() == isHome)
-                .findFirst()
-                .orElseThrow(MatchNoHomeTeamException::new);
-
-        return result;
-    }
-
-//'    public List<Player> playersScores() {
-//        return
-//    }'
 
     public void setWinningTeam() {
         MatchTeam homeMatchTeam = this.getMatchTeam(true);

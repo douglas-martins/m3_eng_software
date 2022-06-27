@@ -40,7 +40,8 @@ public class MatchSimulator {
         awayMatchTeam.getTeam().addMatches(this.match);
         homeMatchTeam.getTeam().resetPlayersCurrentGoals();
         awayMatchTeam.getTeam().resetPlayersCurrentGoals();
-        System.out.println("a");
+        System.out.println(homeMatchTeam);
+        System.out.println(awayMatchTeam);
     }
 
     private void chooseHomeAndAwayTeam() {
