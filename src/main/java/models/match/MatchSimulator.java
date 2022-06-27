@@ -114,9 +114,7 @@ public class MatchSimulator {
         return players.get(0);
     }
 
-    private void addHomeTeamAdvantage(double attackingValue,
-                                             double defendingValue,
-                                             boolean isHomeTeamAttacking) {
+    private void addHomeTeamAdvantage(double attackingValue, double defendingValue, boolean isHomeTeamAttacking) {
         if (isHomeTeamAttacking) {
             attackingValue *= HOME_TEAM_PLUS;
         } else {
