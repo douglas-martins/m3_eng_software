@@ -1,12 +1,11 @@
-package models;
+package models.match;
 
+import exception.MatchNoHomeTeamException;
 import lombok.Getter;
+import models.Team;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
 
 @Getter
 public class Match {

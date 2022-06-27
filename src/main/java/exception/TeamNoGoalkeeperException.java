@@ -1,4 +1,4 @@
-package models;
+package exception;
 
 public class TeamNoGoalkeeperException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package models;
+package exception;
 
 public class MatchNoHomeTeamException extends RuntimeException {
     
