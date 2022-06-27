@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8976600d-a3b0-4d3c-a70a-d3f7920162f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/m3_eng_software.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/remote-targets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/team/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/player/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +96,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="m3" />
+      <module name="m3_eng_software" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1656331863619</updated>
       <workItem from="1656331865599" duration="8884000" />
-      <workItem from="1656361321678" duration="2673000" />
+      <workItem from="1656361321678" duration="6468000" />
     </task>
     <servers />
   </component>

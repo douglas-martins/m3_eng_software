@@ -2,6 +2,8 @@ package models.player;
 
 import lombok.Getter;
 
+import java.util.Objects;
+
 @Getter
 public class Player implements Comparable<Player> {
 
@@ -65,5 +67,31 @@ public class Player implements Comparable<Player> {
     @Override
     public int compareTo(Player o) {
         return this.goals.compareTo(o.getGoals());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Player)) return false;
+        Player player = (Player) o;
+        return getPosition().equals(player.getPosition())
+                && getName().equals(player.getName())
+                && getAbility().equals(player.getAbility())
+                && getAge().equals(player.getAge())
+                && getShirtNumber().equals(player.getShirtNumber())
+                && getGoals().equals(player.getGoals())
+                && getCurrentMatchGoals().equals(player.getCurrentMatchGoals());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPosition(),
+                getName(),
+                getAbility(),
+                getAge(),
+                getShirtNumber(),
+                getGoals(),
+                getCurrentMatchGoals()
+        );
     }
 }

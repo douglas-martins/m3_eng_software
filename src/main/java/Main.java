@@ -1,8 +1,9 @@
-import models.*;
 import models.match.MatchSimulator;
 import models.match.MatchTeam;
 import models.match.MatchesStatistics;
 import models.player.Player;
+import models.team.Team;
+import models.team.TeamStatistics;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,20 +20,25 @@ public class Main {
     private void runMatchSimulator() {
         List<Player> blackTeamPlayers = this.createBlackTeamPlayers();
         Team blackTeam = this.createBlackTeam(blackTeamPlayers);
+        TeamStatistics blackTeamStatistics = new TeamStatistics(blackTeam);
         List<Player> greenTeamPlayers = this.createGreenTeamPlayers();
         Team greenTeam = this.createGreenTeam(greenTeamPlayers);
+        TeamStatistics greenTeamStatistics = new TeamStatistics(greenTeam);
         List<Team> teams = new ArrayList<>();
         teams.add(blackTeam);
         teams.add(greenTeam);
+        List<TeamStatistics> teamsStatistics = new ArrayList<>();
+        teamsStatistics.add(blackTeamStatistics);
+        teamsStatistics.add(greenTeamStatistics);
 
-        MatchesStatistics matchesStatistics = new MatchesStatistics(teams);
+        MatchesStatistics matchesStatistics = new MatchesStatistics(teamsStatistics);
         MatchSimulator matchSimulator = new MatchSimulator(
                 new MatchTeam(blackTeam),
                 new MatchTeam(greenTeam),
                 LocalDateTime.now());
 
-        matchSimulator.run(matchesStatistics);
-        System.out.println("a");
+        matchSimulator.run(matchesStatistics, teamsStatistics);
+        System.out.println(teamsStatistics);
     }
 
     private List<Player> createBlackTeamPlayers() {

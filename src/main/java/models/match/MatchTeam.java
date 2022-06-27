@@ -1,7 +1,7 @@
 package models.match;
 
 import lombok.Data;
-import models.Team;
+import models.team.Team;
 
 @Data
 public class MatchTeam {

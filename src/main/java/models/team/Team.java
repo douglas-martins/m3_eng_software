@@ -1,7 +1,8 @@
-package models;
+package models.team;
 
 import exception.TeamNoGoalkeeperException;
 import lombok.Data;
+import models.PointsType;
 import models.match.Match;
 import models.player.Defender;
 import models.player.Goalkeeper;
@@ -10,35 +11,24 @@ import models.player.Striker;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import java.util.stream.Collectors;
 
 @Data
-public class Team implements Comparable<Team> {
+public class Team {
 
     private String name;
     private List<Player> players;
-    private List<Match> matches;
-    private Integer points;
 
     public Team(String name) {
         this.name = name;
-        this.points = 0;
         this.players = new ArrayList<>();
-        this.matches = new ArrayList<>();
     }
 
     public void addPlayer(Player player, Integer shirtNumber) {
         player.setShirtNumber(this.getPlayerShirtNumber(shirtNumber));
         this.players.add(player);
-    }
-
-    public void addPoints(PointsType pointsType) {
-        this.points += pointsType.getValue();
-    }
-
-    public void addMatches(Match match) {
-        this.matches.add(match);
     }
 
     public Integer getTeamPower() {
@@ -90,15 +80,23 @@ public class Team implements Comparable<Team> {
         int range = 1;
         int random;
 
-        do{
+        do {
             random = rand.nextInt(range) + 1;
-        }while (numbers.contains(random));
+        } while (numbers.contains(random));
 
         return random;
     }
 
     @Override
-    public int compareTo(Team o) {
-        return this.getPoints().compareTo(o.getPoints());
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Team)) return false;
+        Team team = (Team) o;
+        return getName().equals(team.getName()) && getPlayers().equals(team.getPlayers());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getPlayers());
     }
 }

@@ -2,7 +2,7 @@ package models.match;
 
 import exception.MatchNoHomeTeamException;
 import lombok.Getter;
-import models.Team;
+import models.team.Team;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -22,7 +22,6 @@ public class Match {
     public Team getTeam(Boolean isHome) {
         return getMatchTeam(isHome).getTeam();
     }
-
 
     public MatchTeam getMatchTeam(Boolean isHome){
         return Arrays.stream(this.teams)

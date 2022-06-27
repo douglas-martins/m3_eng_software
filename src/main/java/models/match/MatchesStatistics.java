@@ -1,9 +1,10 @@
 package models.match;
 
 import lombok.Getter;
-import models.player.Player;
 import models.PointsType;
-import models.Team;
+import models.player.Player;
+import models.team.Team;
+import models.team.TeamStatistics;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,10 +14,10 @@ import java.util.List;
 public class MatchesStatistics {
 
     private List<Match> matches;
-    private List<Team> standing;
+    private List<TeamStatistics> standing;
     private List<Player> topScores;
 
-    public MatchesStatistics(List<Team> teams) {
+    public MatchesStatistics(List<TeamStatistics> teams) {
         this.standing = teams;
         this.topScores = new ArrayList<>();
         this.matches = new ArrayList<>();
@@ -27,6 +28,7 @@ public class MatchesStatistics {
 
         this.refreshStanding(match);
         this.refreshTopScores(match);
+        this.refreshTeamStatistics(match);
     }
 
     private void refreshStanding(Match match) {
@@ -34,13 +36,16 @@ public class MatchesStatistics {
         Team awayTeam = match.getTeam(false);
 
         if (match.getWinningTeam() == null) {
-            homeTeam.addPoints(PointsType.DRAW);
-            awayTeam.addPoints(PointsType.DRAW);
-        } else {
-            match.getWinningTeam().getTeam().addPoints(PointsType.WIN);
-        }
+            TeamStatistics homeTeamStatistics = this.getTeamPlayed(homeTeam);
+            TeamStatistics awayTeamStatistics = this.getTeamPlayed(awayTeam);
 
-        this.standing.sort(Collections.reverseOrder());
+            homeTeamStatistics.addPoints(PointsType.DRAW);
+            awayTeamStatistics.addPoints(PointsType.DRAW);
+        } else {
+            TeamStatistics winningTeamStatistics = this.getTeamPlayed(match.getWinningTeam().getTeam());
+
+            winningTeamStatistics.addPoints(PointsType.WIN);
+        }
     }
 
     private void refreshTopScores(Match match) {
@@ -56,7 +61,40 @@ public class MatchesStatistics {
         this.topScores.sort(Collections.reverseOrder());
     }
 
+    private void refreshTeamStatistics(Match match) {
+        MatchTeam homeMatchTeam = match.getMatchTeam(true);
+        MatchTeam awayMatchTeam = match.getMatchTeam(false);
+        TeamStatistics homeTeamStatistics = this.getTeamPlayed(homeMatchTeam);
+        TeamStatistics awayTeamStatistics = this.getTeamPlayed(awayMatchTeam);
+
+        homeTeamStatistics.addGoalsScored(homeMatchTeam.getGoals());
+        homeTeamStatistics.addConcededGoals(awayMatchTeam.getGoals());
+
+        awayTeamStatistics.addGoalsScored(awayMatchTeam.getGoals());
+        awayTeamStatistics.addConcededGoals(homeMatchTeam.getGoals());
+
+        this.standing.sort(Collections.reverseOrder());
+    }
+
     private void updatePlayerScored(Player player) {
         this.topScores.add(player);
+    }
+
+    private TeamStatistics getTeamPlayed(Team team) {
+        return this.standing.stream().filter(t -> t.getTeam().equals(team)).findFirst().orElse(null);
+    }
+
+    private TeamStatistics getTeamPlayed(MatchTeam matchTeam) {
+        return this.standing.stream()
+                .filter(t -> t.getTeam().equals(matchTeam.getTeam()))
+                .findFirst()
+                .orElse(null);
+    }
+
+    private TeamStatistics getTeamByPlayer(Player player) {
+        return this.standing.stream()
+                .filter(t -> t.getTeam().getPlayer(player.getShirtNumber()).equals(player))
+                .findFirst()
+                .orElse(null);
     }
 }

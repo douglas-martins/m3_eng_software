@@ -1,7 +1,8 @@
 package models.match;
 
-import models.*;
 import models.player.Player;
+import models.team.Team;
+import models.team.TeamStatistics;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -19,7 +20,7 @@ public class MatchSimulator {
         this.chooseHomeAndAwayTeam();
     }
 
-    public void run(MatchesStatistics matchesStatistics) {
+    public void run(MatchesStatistics matchesStatistics, List<TeamStatistics> teamsStatistics) {
         boolean isHomeTeamAttacking = true;
         MatchTeam homeMatchTeam = this.match.getMatchTeam(true);
         MatchTeam awayMatchTeam = this.match.getMatchTeam(false);
@@ -35,12 +36,12 @@ public class MatchSimulator {
         }
 
         this.match.setWinningTeam();
+        teamsStatistics.forEach(teamStatistics -> teamStatistics.addMatches(this.match));
         matchesStatistics.addMatch(this.match);
 
-        homeMatchTeam.getTeam().addMatches(this.match);
-        awayMatchTeam.getTeam().addMatches(this.match);
         homeMatchTeam.getTeam().resetPlayersCurrentGoals();
         awayMatchTeam.getTeam().resetPlayersCurrentGoals();
+
         System.out.println(homeMatchTeam);
         System.out.println(awayMatchTeam);
     }
