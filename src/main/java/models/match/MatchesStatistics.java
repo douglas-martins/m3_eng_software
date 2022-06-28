@@ -39,7 +39,6 @@ public class MatchesStatistics {
         } else {
             match.getWinningTeam().getTeam().addPoints(PointsType.WIN);
         }
-
         this.standing.sort(Collections.reverseOrder());
     }
 
