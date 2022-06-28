@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8976600d-a3b0-4d3c-a70a-d3f7920162f2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MatchTeamTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="m3_eng_software" />
@@ -94,8 +94,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MatchTeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m3_eng_software" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.match.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.match" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchTeamTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m3_eng_software" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.match.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.match" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MatchTeamTest" />
+        <item itemvalue="JUnit.MatchTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -109,7 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1656331863619</updated>
       <workItem from="1656331865599" duration="8884000" />
-      <workItem from="1656361321678" duration="8968000" />
+      <workItem from="1656361321678" duration="13453000" />
     </task>
     <servers />
   </component>
