@@ -59,7 +59,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2B9wy98i3GZkjUKgzPxD1TBF7dV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -112,6 +114,38 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.MatchesStatisticsTest.shouldRankTeamsCorrectlyByRules">
+    <configuration name="MatchSimulatorTest.shouldRunSimulation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m3_eng_software" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.match.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.match" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchSimulatorTest" />
+      <option name="METHOD_NAME" value="shouldRunSimulation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatchSimulatorTest.shouldThrowMatchNoHomeTeamException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m3_eng_software" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.match.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.match" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchSimulatorTest" />
+      <option name="METHOD_NAME" value="shouldThrowMatchNoHomeTeamException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MatchTeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m3_eng_software" />
       <extension name="coverage">
@@ -121,38 +155,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="models.match" />
-      <option name="MAIN_CLASS_NAME" value="models.match.MatchTeamTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="m3_eng_software" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="models.match.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="models.match" />
-      <option name="MAIN_CLASS_NAME" value="models.match.MatchTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatchTest.shouldReturnMatchNoHomeTeamException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="m3_eng_software" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="models.match.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="models.match" />
-      <option name="MAIN_CLASS_NAME" value="models.match.MatchTest" />
-      <option name="METHOD_NAME" value="shouldReturnMatchNoHomeTeamException" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchSimulatorTest" />
+      <option name="METHOD_NAME" value="shouldNotRunSimulation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -191,18 +195,16 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation" />
+      <item itemvalue="JUnit.MatchSimulatorTest.shouldThrowMatchNoHomeTeamException" />
+      <item itemvalue="JUnit.MatchTeamTest" />
       <item itemvalue="JUnit.MatchesStatisticsTest.shouldRankTeamsCorrectlyByRules" />
       <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
-      <item itemvalue="JUnit.MatchTeamTest" />
-      <item itemvalue="JUnit.MatchTest" />
-      <item itemvalue="JUnit.MatchTest.shouldReturnMatchNoHomeTeamException" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MatchesStatisticsTest.shouldRankTeamsCorrectlyByRules" />
         <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
-        <item itemvalue="JUnit.MatchTest" />
-        <item itemvalue="JUnit.MatchTest.shouldReturnMatchNoHomeTeamException" />
         <item itemvalue="JUnit.MatchTeamTest" />
       </list>
     </recent_temporary>
@@ -217,7 +219,7 @@
       <updated>1656331863619</updated>
       <workItem from="1656331865599" duration="8884000" />
       <workItem from="1656361321678" duration="14114000" />
-      <workItem from="1656441799510" duration="1713000" />
+      <workItem from="1656441799510" duration="6862000" />
     </task>
     <servers />
   </component>
