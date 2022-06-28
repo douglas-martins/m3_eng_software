@@ -60,9 +60,10 @@ public class MatchSimulator {
     }
 
     private void chooseHomeAndAwayTeam() {
-        if(match.getTeams() == null || match.getTeams().length <2){
+        if (match.getTeams() == null || match.getTeams().length < 2) {
             throw new MatchNoHomeTeamException();
         }
+
         Random random = new Random();
         int homeIndex = random.nextInt(2);
         int awayIndex = homeIndex == 1 ? 0 : 1;
@@ -70,7 +71,7 @@ public class MatchSimulator {
         try {
             this.match.getTeams()[homeIndex].setIsHome(true);
             this.match.getTeams()[awayIndex].setIsHome(false);
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             throw new MatchNoHomeTeamException();
         }
     }

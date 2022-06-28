@@ -15,7 +15,7 @@ public class Match implements Cloneable {
     private MatchTeam winningTeam;
 
     public Match(MatchTeam firstTeam, MatchTeam secondTeam, LocalDateTime date) {
-        this.teams = new MatchTeam[] {firstTeam.clone(), secondTeam.clone()};
+        this.teams = new MatchTeam[] {firstTeam, secondTeam};
         this.date = date;
     }
 

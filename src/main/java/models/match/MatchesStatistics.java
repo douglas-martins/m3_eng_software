@@ -25,8 +25,7 @@ public class MatchesStatistics {
     }
 
     public void addMatch(Match match) {
-        Match cloneMatch = match.clone();
-        this.matches.add(cloneMatch);
+        this.matches.add(match);
 
         this.refreshStanding(match);
         this.refreshTopScores(match);

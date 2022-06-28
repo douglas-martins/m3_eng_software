@@ -31,6 +31,7 @@ public class MatchesStatisticsTest {
         List<TeamStatistics> teamStatistics = new ArrayList<>();
         teamStatistics.add(new TeamStatistics(blueTeam));
         teamStatistics.add(new TeamStatistics(greenTeam));
+        teamStatistics.add(new TeamStatistics(redTeam));
         MatchesStatistics matchesStatistics = new MatchesStatistics(teamStatistics);
         matchesStatistics.addMatch(match1);
         matchesStatistics.addMatch(match2);
@@ -272,6 +273,7 @@ public class MatchesStatisticsTest {
         List<TeamStatistics> teamStatistics = new ArrayList<>();
         teamStatistics.add(new TeamStatistics(blueTeam));
         teamStatistics.add(new TeamStatistics(greenTeam));
+        teamStatistics.add(new TeamStatistics(redTeam));
         MatchesStatistics matchesStatistics = new MatchesStatistics(teamStatistics);
 
         assertEquals(blueTeam.getName(),matchesStatistics.getStandingByTeamPower().get(0).getName());
