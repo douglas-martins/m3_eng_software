@@ -26,9 +26,21 @@ public class Team {
         this.players = new ArrayList<>();
     }
 
-    public void addPlayer(Player player, Integer shirtNumber) {
+    public boolean addPlayer(Player player, Integer shirtNumber) {
+        if (!validatePositions(player)) return false;
+
         player.setShirtNumber(this.getPlayerShirtNumber(shirtNumber));
         this.players.add(player);
+
+        return true;
+    }
+
+    private boolean validatePositions(Player player){
+        if(player.getPosition().getClass().equals(Goalkeeper.class) && getGoalkeeper() != null) return false;
+        if(player.getPosition().getClass().equals(Defender.class) && getDefenders().size() == 2) return false;
+        if(player.getPosition().getClass().equals(Striker.class) && getStrikers().size() == 2) return false;
+
+        return true;
     }
 
     public Integer getTeamPower() {
@@ -44,7 +56,7 @@ public class Team {
     }
 
     public Player getGoalkeeper() {
-        return getPlayerByPosition(Goalkeeper.class).stream().findFirst().orElseThrow(TeamNoGoalkeeperException::new);
+        return getPlayerByPosition(Goalkeeper.class).stream().findFirst().orElse(null);
     }
 
     private List<Player> getPlayerByPosition(Class<?> position){
@@ -85,6 +97,10 @@ public class Team {
         } while (numbers.contains(random));
 
         return random;
+    }
+
+    public void removePlayer(int shirtNumber){
+        players.remove(getPlayer(shirtNumber));
     }
 
     @Override
