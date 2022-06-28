@@ -1,5 +1,6 @@
 package models.match;
 
+import exception.MatchNoHomeTeamException;
 import models.player.Player;
 import models.team.Team;
 import org.junit.jupiter.api.Assertions;
@@ -19,36 +20,44 @@ public class MatchTest {
         Team greenTeam = this.createGreenTeam(this.createGreenTeamPlayers());
 
         this.match = new Match(new MatchTeam(blackTeam), new MatchTeam(greenTeam), LocalDateTime.now());
-        this.match.getTeams()[0].setIsHome(true);
-        this.match.getTeams()[1].setIsHome(false);
     }
 
     @Test
     public void shouldGetMatchHomeTeam() {
+        this.setHomeAndAwayTeam();
+
         MatchTeam homeMatchTeam = this.match.getMatchTeam(true);
         Assertions.assertTrue(homeMatchTeam.getIsHome(), "Match should return false, signaling o Black FC team");
     }
 
     @Test
     public void shouldGetMatchAwayTeam() {
+        this.setHomeAndAwayTeam();
+
         MatchTeam awayMatchTeam = this.match.getMatchTeam(false);
         Assertions.assertFalse(awayMatchTeam.getIsHome(), "Match should return false, signaling o Green FC team");
     }
 
     @Test
     public void shouldGetHomeTeam() {
+        this.setHomeAndAwayTeam();
+
         Team homeTeam = this.match.getTeam(true);
         Assertions.assertEquals("Black FC", homeTeam.getName(), "Match should return the home team name, Black FC");
     }
 
     @Test
     public void shouldGetAwayTeam() {
+        this.setHomeAndAwayTeam();
+
         Team awayTeam = this.match.getTeam(false);
         Assertions.assertEquals("Green FC", awayTeam.getName(), "Match should return the away team name, Green FC");
     }
 
     @Test
     public void shouldSetBlackTeamWinner() {
+        this.setHomeAndAwayTeam();
+
         this.match.getMatchTeam(true).addGoal();
         this.match.getMatchTeam(true).addGoal();
         this.match.getMatchTeam(true).addGoal();
@@ -63,6 +72,8 @@ public class MatchTest {
 
     @Test
     public void shouldSetGreenTeamWinner() {
+        this.setHomeAndAwayTeam();
+
         this.match.getMatchTeam(false).addGoal();
 
         this.match.setWinningTeam();
@@ -70,6 +81,12 @@ public class MatchTest {
         Assertions.assertNotNull(this.match.getWinningTeam(), "Match should return a instance object for Green FC team");
         Assertions.assertEquals(this.match.getMatchTeam(false), this.match.getWinningTeam(),
                 "Match should has the same reference for team, on the winningTeam and homeTeam variables");
+    }
+
+    @Test
+    public void shouldReturnMatchNoHomeTeamException() {
+        Assertions.assertThrowsExactly(MatchNoHomeTeamException.class, () -> this.match.getTeam(true));
+        Assertions.assertThrowsExactly(MatchNoHomeTeamException.class, () -> this.match.getMatchTeam(true));
     }
 
     private Team createBlackTeam(List<Player> players) {
@@ -112,5 +129,10 @@ public class MatchTest {
         Player strikerTwo = Player.CreateAsStriker("Eduardo", 20, 75, 75);
 
         return List.of(goalkeeper, defenderOne, defenderTwo, strikerOne, strikerTwo);
+    }
+
+    private void setHomeAndAwayTeam() {
+        this.match.getTeams()[0].setIsHome(true);
+        this.match.getTeams()[1].setIsHome(false);
     }
 }
