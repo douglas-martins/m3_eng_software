@@ -65,7 +65,8 @@ public class MatchTest {
 
         this.match.setWinningTeam();
 
-        Assertions.assertNotNull(this.match.getWinningTeam(), "Match should return a instance object for Black FC team");
+        Assertions.assertNotNull(this.match.getWinningTeam(),
+                "Match should return a instance object for Black FC team");
         Assertions.assertEquals(this.match.getMatchTeam(true), this.match.getWinningTeam(),
                 "Match should has the same reference for team, on the winningTeam and homeTeam variables");
     }
@@ -78,7 +79,8 @@ public class MatchTest {
 
         this.match.setWinningTeam();
 
-        Assertions.assertNotNull(this.match.getWinningTeam(), "Match should return a instance object for Green FC team");
+        Assertions.assertNotNull(this.match.getWinningTeam(),
+                "Match should return a instance object for Green FC team");
         Assertions.assertEquals(this.match.getMatchTeam(false), this.match.getWinningTeam(),
                 "Match should has the same reference for team, on the winningTeam and homeTeam variables");
     }
