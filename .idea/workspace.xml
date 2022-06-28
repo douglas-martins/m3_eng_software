@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8976600d-a3b0-4d3c-a70a-d3f7920162f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_0_M1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_0_M1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_0_M1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_9_0_M1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_0_M1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_0_M1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/m3_eng_software.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/m3_eng_software.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/team/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/team/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchSimulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/models/match/MatchSimulatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/match/MatchSimulatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/match/MatchesStatisticsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/match/MatchesStatisticsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +46,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2B9wy98i3GZkjUKgzPxD1TBF7dV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -111,7 +100,7 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower">
+  <component name="RunManager" selected="JUnit.MatchSimulatorTest.shouldThrowMatchNoHomeTeamException">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="m3_eng_software" />
@@ -119,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatchTeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MatchSimulatorTest.shouldNotRunSimulation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m3_eng_software" />
       <extension name="coverage">
         <pattern>
@@ -128,13 +117,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="models.match" />
-      <option name="MAIN_CLASS_NAME" value="models.match.MatchTeamTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchSimulatorTest" />
+      <option name="METHOD_NAME" value="shouldNotRunSimulation" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MatchSimulatorTest.shouldRunSimulation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m3_eng_software" />
       <extension name="coverage">
         <pattern>
@@ -143,13 +133,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="models.match" />
-      <option name="MAIN_CLASS_NAME" value="models.match.MatchTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchSimulatorTest" />
+      <option name="METHOD_NAME" value="shouldRunSimulation" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatchTest.shouldReturnMatchNoHomeTeamException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MatchSimulatorTest.shouldThrowMatchNoHomeTeamException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m3_eng_software" />
       <extension name="coverage">
         <pattern>
@@ -158,8 +149,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="models.match" />
-      <option name="MAIN_CLASS_NAME" value="models.match.MatchTest" />
-      <option name="METHOD_NAME" value="shouldReturnMatchNoHomeTeamException" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchSimulatorTest" />
+      <option name="METHOD_NAME" value="shouldThrowMatchNoHomeTeamException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,18 +174,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.MatchSimulatorTest.shouldNotRunSimulation" />
+      <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation" />
+      <item itemvalue="JUnit.MatchSimulatorTest.shouldThrowMatchNoHomeTeamException" />
       <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
-      <item itemvalue="JUnit.MatchTeamTest" />
-      <item itemvalue="JUnit.MatchTest" />
-      <item itemvalue="JUnit.MatchTest.shouldReturnMatchNoHomeTeamException" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
-        <item itemvalue="JUnit.MatchTest" />
-        <item itemvalue="JUnit.MatchTest.shouldReturnMatchNoHomeTeamException" />
-        <item itemvalue="JUnit.MatchTeamTest" />
+        <item itemvalue="JUnit.MatchSimulatorTest.shouldThrowMatchNoHomeTeamException" />
+        <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MatchSimulatorTest.shouldNotRunSimulation" />
+        <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +199,7 @@
       <updated>1656331863619</updated>
       <workItem from="1656331865599" duration="8884000" />
       <workItem from="1656361321678" duration="14114000" />
-      <workItem from="1656441799510" duration="1713000" />
+      <workItem from="1656441799510" duration="6862000" />
     </task>
     <servers />
   </component>

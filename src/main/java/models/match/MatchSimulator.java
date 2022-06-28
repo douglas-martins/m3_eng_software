@@ -1,5 +1,6 @@
 package models.match;
 
+import exception.MatchNoHomeTeamException;
 import models.player.Player;
 import models.team.Team;
 import models.team.TeamStatistics;
@@ -15,8 +16,7 @@ public class MatchSimulator {
     private Match match;
 
     public MatchSimulator(MatchTeam firstTeam, MatchTeam secondTeam, LocalDateTime date) {
-        this.match = new Match(firstTeam, secondTeam, date);
-
+        this.match = new Match(firstTeam,secondTeam,date);
         this.chooseHomeAndAwayTeam();
     }
 
@@ -31,7 +31,7 @@ public class MatchSimulator {
      * @param matchesStatistics object with the data from matches
      * @param teamsStatistics object with the data from teams
      */
-    public void run(MatchesStatistics matchesStatistics, List<TeamStatistics> teamsStatistics) {
+    public Match run(MatchesStatistics matchesStatistics, List<TeamStatistics> teamsStatistics) {
         boolean isHomeTeamAttacking = true;
         MatchTeam homeMatchTeam = this.match.getMatchTeam(true);
         MatchTeam awayMatchTeam = this.match.getMatchTeam(false);
@@ -55,15 +55,24 @@ public class MatchSimulator {
 
         System.out.println(homeMatchTeam);
         System.out.println(awayMatchTeam);
+        System.out.println(match.getWinningTeam().toString());
+        return match;
     }
 
     private void chooseHomeAndAwayTeam() {
+        if(match.getTeams() == null || match.getTeams().length <2){
+            throw new MatchNoHomeTeamException();
+        }
         Random random = new Random();
         int homeIndex = random.nextInt(2);
         int awayIndex = homeIndex == 1 ? 0 : 1;
 
-        this.match.getTeams()[homeIndex].setIsHome(true);
-        this.match.getTeams()[awayIndex].setIsHome(false);
+        try {
+            this.match.getTeams()[homeIndex].setIsHome(true);
+            this.match.getTeams()[awayIndex].setIsHome(false);
+        }catch (NullPointerException e){
+            throw new MatchNoHomeTeamException();
+        }
     }
 
     private void simulateRound(Team attackingTeam, Team defenderTeam, boolean isHomeTeamAttacking) {
