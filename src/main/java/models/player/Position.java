@@ -12,7 +12,7 @@ public interface Position {
     }
 
     default Integer validateAttributeInRange(Integer attribute, int max){
-        if (attribute <= 0) return 1;
+        if (attribute < 0) return 0;
         if (attribute > max) return max;
         return round(Double.valueOf(attribute));
     }

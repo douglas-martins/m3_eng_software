@@ -12,12 +12,12 @@ public class Goalkeeper implements Position{
 
     public Goalkeeper(Integer height, Integer reflexes) {
         this.height = calculateHeightNormalizedValue(height);
-        this.reflexes = reflexes;
+        this.reflexes = validateAttributeInRange(reflexes);
     }
 
     @Override
     public Integer calculateAbility() {
-        return ((height * 4) + (this.reflexes * 6));
+        return ((height * 4) + (this.reflexes * 6)) / 10;
     }
 
     private Integer calculateHeightNormalizedValue(Integer height) {

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class TeamTest {
@@ -81,6 +82,28 @@ public class TeamTest {
         for (int i = 0; i< strikers.size(); i++) team.addPlayer(strikers.get(i), i);
 
         Assertions.assertFalse(team.addPlayer(strikers.get(2), 3), "Should return false because the team already have the limit of strikers");
+    }
+
+    @Test
+    public void shouldNotRepeatShirtNumbers(){
+        List<Player> defenders = createDefenders(5);
+        setShirtNumberTo(1, defenders);
+        defenders.forEach(defender -> team.addPlayer(defender, defender.getShirtNumber()));
+
+        Assertions.assertTrue(HasDifferentShirtNumber(team.getPlayers()), "Should return pass because the number shirt will not repeat");
+    }
+
+    private boolean HasDifferentShirtNumber (List<Player> players){
+        for (int i = 0; i < players.size() - 1; i++){
+            for (int j = i + 1; j < players.size() - 1; j++){
+                if(Objects.equals(players.get(i).getShirtNumber(), players.get(j).getShirtNumber())) return false;
+            }
+        }
+        return true;
+    }
+
+    private void setShirtNumberTo(int shirtNumber, List<Player> players){
+        players.forEach(player -> player.setShirtNumber(shirtNumber));
     }
 
     private Player createGoalKeeper(){
