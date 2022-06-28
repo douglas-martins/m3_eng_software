@@ -9,10 +9,7 @@ import models.player.Goalkeeper;
 import models.player.Player;
 import models.player.Striker;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Data
@@ -114,5 +111,9 @@ public class Team {
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getPlayers());
+    }
+
+    public int compareTeamPower(Team o){
+        return Comparator.comparing(Team::getTeamPower).compare(this,o);
     }
 }

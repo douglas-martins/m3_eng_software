@@ -6,6 +6,7 @@ import models.player.Player;
 import models.team.Team;
 import models.team.TeamStatistics;
 
+import java.lang.ref.Reference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -96,5 +97,14 @@ public class MatchesStatistics {
                 .filter(t -> t.getTeam().getPlayer(player.getShirtNumber()).equals(player))
                 .findFirst()
                 .orElse(null);
+    }
+
+    public List<Team> getStandingByTeamPower(){
+        List<Team> teamPowerStanding = new ArrayList<>();
+        for (TeamStatistics t : standing){
+            teamPowerStanding.add(t.getTeam());
+        }
+        teamPowerStanding.sort(Team::compareTeamPower);
+        return teamPowerStanding;
     }
 }
