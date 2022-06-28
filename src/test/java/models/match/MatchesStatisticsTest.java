@@ -16,36 +16,15 @@ public class MatchesStatisticsTest {
 
     @Test
     public void shouldAddMatch() {
-        Team blueTeam = new Team("Blue Team");
-        blueTeam.setPlayers(List.of(Player.CreateAsGoalkeeper("Gabriel", 22, 183, 89),
-                Player.CreateAsDefender("Alex", 21, 80, 70),
-                Player.CreateAsDefender("David", 22, 76, 79),
-                Player.CreateAsStriker("Evandro", 28, 69, 82),
-                Player.CreateAsStriker("Nene", 18, 90, 60)
-        ));
-        Team greenTeam = new Team("Green Team");
-        greenTeam.setPlayers(List.of(Player.CreateAsGoalkeeper("Gabriel", 22, 183, 89),
-                Player.CreateAsDefender("Alex", 21, 80, 70),
-                Player.CreateAsDefender("David", 22, 76, 79),
-                Player.CreateAsStriker("Evandro", 28, 69, 82),
-                Player.CreateAsStriker("Nene", 18, 90, 60)
-        ));
-        Team redTeam = new Team("Red Team");
-        redTeam.setPlayers(List.of(Player.CreateAsGoalkeeper("Gabriel", 22, 196, 90),
-                Player.CreateAsDefender("Ale", 23, 84, 73),
-                Player.CreateAsDefender("Rachilson", 27, 87, 90),
-                Player.CreateAsStriker("Enzo", 29, 78, 90),
-                Player.CreateAsStriker("Luiz", 22, 80, 81)
-        ));
+        Team blueTeam = createBlueTeam();
+        Team greenTeam = createGreenTeam();
+        Team redTeam = createRedTeam();
 
-        MatchTeam matchTeam1 = new MatchTeam(blueTeam);
-        matchTeam1.setIsHome(true);
-        MatchTeam matchTeam2 = new MatchTeam(greenTeam);
-        matchTeam2.setIsHome(false);
-        MatchTeam matchTeam3 = new MatchTeam(redTeam);
-        matchTeam3.setIsHome(true);
-        Match match1 = new Match(matchTeam1, matchTeam2, LocalDateTime.now());
-        Match match2 = new Match(matchTeam3, matchTeam2, LocalDateTime.now());
+        MatchTeam matchTeam1 = createMatchHomeTeam(blueTeam);
+        MatchTeam matchTeam2 = createMatchTeam(greenTeam);
+        MatchTeam matchTeam3 = createMatchHomeTeam(redTeam);
+        Match match1 = createMatch(matchTeam1,matchTeam2);
+        Match match2 = createMatch(matchTeam3, matchTeam2);
         List<Team> teams = new ArrayList<>();
         teams.add(blueTeam);
         teams.add(greenTeam);
@@ -57,5 +36,69 @@ public class MatchesStatisticsTest {
         assertNotNull(matchesStatistics.getMatches());
         assertEquals(match1, matchesStatistics.getMatches().get(0));
         assertEquals(match2, matchesStatistics.getMatches().get(1));
+    }
+
+    private Team createBlueTeam(){
+        Team blueTeam = new Team("Blue Team");
+        blueTeam.setPlayers(List.of(Player.CreateAsGoalkeeper("Gabriel", 22, 183, 80),
+                Player.CreateAsDefender("Alex", 21, 70, 80),
+                Player.CreateAsDefender("David", 22, 60, 66),
+                Player.CreateAsStriker("Evandro", 28, 69, 89),
+                Player.CreateAsStriker("Nene", 18, 100, 80)
+        ));
+        return blueTeam;
+    }
+
+    private Team createGreenTeam(){
+        Team greenTeam = new Team("Green Team");
+        greenTeam.setPlayers(List.of(Player.CreateAsGoalkeeper("Gabriel", 22, 183, 89),
+                Player.CreateAsDefender("Alex", 21, 80, 70),
+                Player.CreateAsDefender("David", 22, 76, 79),
+                Player.CreateAsStriker("Evandro", 28, 69, 82),
+                Player.CreateAsStriker("Nene", 18, 90, 60)
+        ));
+        return greenTeam;
+    }
+
+    private Team createRedTeam(){
+        Team redTeam = new Team("Red Team");
+        redTeam.setPlayers(List.of(Player.CreateAsGoalkeeper("Gabriel", 22, 196, 90),
+                Player.CreateAsDefender("Ale", 23, 80, 70),
+                Player.CreateAsDefender("Rachilson", 27, 100, 60),
+                Player.CreateAsStriker("Enzo", 29, 60, 70),
+                Player.CreateAsStriker("Luiz", 22, 80, 80)
+        ));
+        return redTeam;
+    }
+
+    private Match createMatch( MatchTeam matchTeam1,  MatchTeam matchTeam2){
+        return new Match(matchTeam1, matchTeam2, LocalDateTime.now());
+    }
+
+    private MatchTeam createMatchHomeTeam(Team team){
+        MatchTeam matchHomeTeam = new MatchTeam(team);
+        matchHomeTeam.setIsHome(true);
+        return matchHomeTeam;
+    }
+
+    private MatchTeam createMatchTeam(Team team){
+        MatchTeam matchTeam = new MatchTeam(team);
+        matchTeam.setIsHome(false);
+        return matchTeam;
+    }
+
+    @Test
+    public void shouldClassifyWithTeamPower(){
+        Team blueTeam = createBlueTeam();
+        Team greenTeam = createGreenTeam();
+        Team redTeam = createRedTeam();
+
+        List<Team> teams = new ArrayList<>();
+        teams.add(blueTeam);
+        teams.add(greenTeam);
+        teams.add(redTeam);
+        MatchesStatistics matchesStatistics = new MatchesStatistics(teams);
+
+        assertEquals(blueTeam.getName(),matchesStatistics.getStandingByTeamPower().get(0).getName());
     }
 }

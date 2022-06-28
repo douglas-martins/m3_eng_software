@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8976600d-a3b0-4d3c-a70a-d3f7920162f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_9_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/match/MatchSimulatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/match/MatchSimulatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/models/match/MatchesStatisticsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/match/MatchesStatisticsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +97,7 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MatchSimulatorTest.shouldRunSimulation (1)">
+  <component name="RunManager" selected="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -169,16 +156,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MatchesStatisticsTest.shouldClassifyWithTeamPower" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.match.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.match" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchesStatisticsTest" />
+      <option name="METHOD_NAME" value="shouldClassifyWithTeamPower" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
       <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation (1)" />
       <item itemvalue="JUnit.MatchesStatisticsTest.shouldAddMatch" />
       <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation (1)" />
+        <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
         <item itemvalue="JUnit.MatchesStatisticsTest.shouldAddMatch" />
+        <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MatchSimulatorTest.shouldRunSimulation" />
       </list>
@@ -195,6 +200,7 @@
       <workItem from="1656331865599" duration="8884000" />
       <workItem from="1656363910508" duration="2747000" />
       <workItem from="1656366721722" duration="6644000" />
+      <workItem from="1656437946366" duration="2982000" />
     </task>
     <servers />
   </component>
@@ -211,5 +217,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/models/match/MatchesStatisticsTest.java</url>
+          <line>90</line>
+          <properties class="models.match.MatchesStatisticsTest" method="shouldClassifyWithTeamPower">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -7,6 +7,7 @@ import models.Team;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Getter
@@ -57,5 +58,11 @@ public class MatchesStatistics {
 
     private void updatePlayerScored(Player player) {
         this.topScores.add(player);
+    }
+
+    public List<Team> getStandingByTeamPower(){
+        List<Team> teamPowerStanding = standing;
+        teamPowerStanding.sort(Team::compareTeamPower);
+        return teamPowerStanding;
     }
 }

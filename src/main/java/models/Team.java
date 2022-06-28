@@ -10,6 +10,7 @@ import models.player.Player;
 import models.player.Striker;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -101,5 +102,9 @@ public class Team implements Comparable<Team> {
     @Override
     public int compareTo(Team o) {
         return this.getPoints().compareTo(o.getPoints());
+    }
+
+    public int compareTeamPower(Team o){
+        return Comparator.comparing(Team::getTeamPower).compare(this,o);
     }
 }
