@@ -27,7 +27,8 @@ public class MatchTest {
         this.setHomeAndAwayTeam();
 
         MatchTeam homeMatchTeam = this.match.getMatchTeam(true);
-        Assertions.assertTrue(homeMatchTeam.getIsHome(), "Match should return false, signaling o Black FC team");
+        Assertions.assertTrue(homeMatchTeam.getIsHome(),
+                "Match should return false, signaling o Black FC team");
     }
 
     @Test
@@ -35,7 +36,8 @@ public class MatchTest {
         this.setHomeAndAwayTeam();
 
         MatchTeam awayMatchTeam = this.match.getMatchTeam(false);
-        Assertions.assertFalse(awayMatchTeam.getIsHome(), "Match should return false, signaling o Green FC team");
+        Assertions.assertFalse(awayMatchTeam.getIsHome(),
+                "Match should return false, signaling o Green FC team");
     }
 
     @Test
@@ -43,7 +45,8 @@ public class MatchTest {
         this.setHomeAndAwayTeam();
 
         Team homeTeam = this.match.getTeam(true);
-        Assertions.assertEquals("Black FC", homeTeam.getName(), "Match should return the home team name, Black FC");
+        Assertions.assertEquals("Black FC", homeTeam.getName(),
+                "Match should return the home team name, Black FC");
     }
 
     @Test
@@ -51,7 +54,8 @@ public class MatchTest {
         this.setHomeAndAwayTeam();
 
         Team awayTeam = this.match.getTeam(false);
-        Assertions.assertEquals("Green FC", awayTeam.getName(), "Match should return the away team name, Green FC");
+        Assertions.assertEquals("Green FC", awayTeam.getName(),
+                "Match should return the away team name, Green FC");
     }
 
     @Test
