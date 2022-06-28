@@ -8,14 +8,14 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 
 @Getter
-public class Match {
+public class Match implements Cloneable {
 
     private MatchTeam[] teams = new MatchTeam[2];
     private LocalDateTime date;
     private MatchTeam winningTeam;
 
     public Match(MatchTeam firstTeam, MatchTeam secondTeam, LocalDateTime date) {
-        this.teams = new MatchTeam[] {firstTeam, secondTeam};
+        this.teams = new MatchTeam[] {firstTeam.clone(), secondTeam.clone()};
         this.date = date;
     }
 
@@ -40,6 +40,17 @@ public class Match {
             this.winningTeam = null;
         } else {
             this.winningTeam = awayMatchTeam;
+        }
+    }
+
+    @Override
+    public Match clone() {
+        try {
+            Match clone = (Match) super.clone();
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
         }
     }
 }

@@ -25,7 +25,8 @@ public class MatchesStatistics {
     }
 
     public void addMatch(Match match) {
-        this.matches.add(match);
+        Match cloneMatch = match.clone();
+        this.matches.add(cloneMatch);
 
         this.refreshStanding(match);
         this.refreshTopScores(match);
@@ -42,10 +43,18 @@ public class MatchesStatistics {
 
             homeTeamStatistics.addPoints(PointsType.DRAW);
             awayTeamStatistics.addPoints(PointsType.DRAW);
+
+            homeTeamStatistics.addDraw();
+            awayTeamStatistics.addDraw();
         } else {
             TeamStatistics winningTeamStatistics = this.getTeamPlayed(match.getWinningTeam().getTeam());
+            TeamStatistics losingTeamStatistics = this.getLoseTeam(match.getWinningTeam().getTeam());
 
             winningTeamStatistics.addPoints(PointsType.WIN);
+            losingTeamStatistics.addPoints(PointsType.LOSE);
+
+            winningTeamStatistics.addWin();
+            losingTeamStatistics.addLose();
         }
     }
 
@@ -83,6 +92,10 @@ public class MatchesStatistics {
 
     private TeamStatistics getTeamPlayed(Team team) {
         return this.standing.stream().filter(t -> t.getTeam().equals(team)).findFirst().orElse(null);
+    }
+
+    private TeamStatistics getLoseTeam(Team winner) {
+        return this.standing.stream().filter(t -> !t.getTeam().equals(winner)).findFirst().orElse(null);
     }
 
     private TeamStatistics getTeamPlayed(MatchTeam matchTeam) {

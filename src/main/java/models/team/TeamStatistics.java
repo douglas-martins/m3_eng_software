@@ -51,6 +51,18 @@ public class TeamStatistics implements Comparable<TeamStatistics> {
         this.updateGoalDifference();
     }
 
+    public void addWin() {
+        this.winsNumber += 1;
+    }
+
+    public void addDraw() {
+        this.drawsNumber += 1;
+    }
+
+    public void addLose() {
+        this.losesNumber += 1;
+    }
+
     private void updateGoalDifference() {
         this.goalDifference = this.goalsScored - this.concededGoals;
     }
@@ -70,8 +82,11 @@ public class TeamStatistics implements Comparable<TeamStatistics> {
                 "team=" + team +
                 ", goalsScored=" + goalsScored +
                 ", concededGoals=" + concededGoals +
-                ", goalDifference=" + goalDifference +
                 ", points=" + points +
+                ", goalDifference=" + goalDifference +
+                ", winsNumber=" + winsNumber +
+                ", drawsNumber=" + drawsNumber +
+                ", losesNumber=" + losesNumber +
                 ", matches=" + matches +
                 '}';
     }

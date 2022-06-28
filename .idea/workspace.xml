@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8976600d-a3b0-4d3c-a70a-d3f7920162f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_0_M1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_0_M1.xml" afterDir="false" />
@@ -15,11 +15,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_0_M1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/m3_eng_software.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/m3_eng_software.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchTeam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/match/MatchesStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/team/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/team/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/match/MatchSimulatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/match/MatchSimulatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/team/TeamStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/team/TeamStatistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/models/match/MatchesStatisticsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/match/MatchesStatisticsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,14 +111,7 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="m3_eng_software" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MatchesStatisticsTest.shouldRankTeamsCorrectlyByRules">
     <configuration name="MatchTeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m3_eng_software" />
       <extension name="coverage">
@@ -181,8 +174,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MatchesStatisticsTest.shouldRankTeamsCorrectlyByRules" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m3_eng_software" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.match.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.match" />
+      <option name="MAIN_CLASS_NAME" value="models.match.MatchesStatisticsTest" />
+      <option name="METHOD_NAME" value="shouldRankTeamsCorrectlyByRules" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.MatchesStatisticsTest.shouldRankTeamsCorrectlyByRules" />
       <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
       <item itemvalue="JUnit.MatchTeamTest" />
       <item itemvalue="JUnit.MatchTest" />
@@ -190,11 +199,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MatchesStatisticsTest.shouldRankTeamsCorrectlyByRules" />
         <item itemvalue="JUnit.MatchesStatisticsTest.shouldClassifyWithTeamPower" />
         <item itemvalue="JUnit.MatchTest" />
         <item itemvalue="JUnit.MatchTest.shouldReturnMatchNoHomeTeamException" />
         <item itemvalue="JUnit.MatchTeamTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
